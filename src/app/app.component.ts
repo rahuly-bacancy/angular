@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-interface ServerElement {
+interface ProductElement {
   price: number;
   name: string;
   description: string;
@@ -10,17 +10,14 @@ interface ServerElement {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements: ServerElement[] = [];
-  productName: string = '';
-  productDescription: string = '';
-  productPrice: number = 0;
+  productElements: ProductElement[] = [{price:23.5,name:"Product A",description:"This is my first product"}];
 
-  onAddproduct() {
-    this.serverElements.push({
-      name: this.productName,
-      description: this.productDescription,
-      price: this.productPrice
+  onAddproduct(productData: ProductElement) {
+    console.log("productData",productData);
+    this.productElements.push({
+      name: productData.name,
+      description: productData.description,
+      price: productData.price
     });
   }
-
 }
