@@ -9,18 +9,16 @@ import { ProductElement } from './interface/product-details';
 export class AppComponent {
   productElements: ProductElement[] = [
     {
-      price:10,name:"Product A",description:"This is the product details for Product A"
+      price: 10, name: "Product A", description: "This is the product details for Product A"
     }
   ];
-  productName: string = '';
-  productDescription: string = '';
-  productPrice: number = 0;
 
-  onAddproduct() {
+
+  onAddproduct(event: ProductElement) {
     this.productElements.push({
-      name: this.productName,
-      description: this.productDescription,
-      price: this.productPrice
+      name:event.name,
+      price:event.price,
+      description:event.description
     });
   }
 
