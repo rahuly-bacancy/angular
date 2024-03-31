@@ -1,4 +1,5 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ProductElement } from '../interface/product-details';
 
 @Component({
   selector: 'app-product-add',
@@ -11,13 +12,13 @@ export class ProductAddComponent {
   productDescription: string = '';
   productPrice: number = 0;
 
-  addProductEvent = new EventEmitter();
+  @Output('alisaProductAdd') addProductEvent = new EventEmitter<ProductElement>();
 
-  addProduct() {
+  addProduct(productname: HTMLInputElement) {
     this.addProductEvent.emit({
-      name: this.productName,
+      name: productname,
       price: this.productPrice,
-      desciption: this.productDescription
+      description: this.productDescription
     });
   }
 }

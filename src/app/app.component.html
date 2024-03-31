@@ -1,10 +1,10 @@
 <div class="container">
-  <app-product-add (addProductEvent)="onAddproduct($event)"></app-product-add>
+  <app-product-add (alisaProductAdd)="onAddproduct($event)"></app-product-add>
 
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-product-list *ngFor="let element of productElements" [element] ="element"></app-product-list>
+      <app-product-list *ngFor="let element of productElements" [aliasElement] ="element"></app-product-list>
     </div>
   </div>
 </div>

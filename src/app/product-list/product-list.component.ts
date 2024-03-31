@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ProductElement } from '../interface/product-details';
 
 @Component({
@@ -7,7 +7,7 @@ import { ProductElement } from '../interface/product-details';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  @Input() element!: ProductElement;
+  @Input('aliasElement') element!: ProductElement;
 
   // constructor() {
   //   this.element = { name: "", price: 0, description: "" }
