@@ -7,7 +7,11 @@ import { ProductElement } from './interface/product-details';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  productElements: ProductElement[] = [];
+  productElements: ProductElement[] = [
+    {
+      price:10,name:"Product A",description:"This is the product details for Product A"
+    }
+  ];
   productName: string = '';
   productDescription: string = '';
   productPrice: number = 0;
