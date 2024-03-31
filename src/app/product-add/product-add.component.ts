@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { ProductElement } from '../interface/product-details';
 
 @Component({
@@ -13,10 +13,11 @@ export class ProductAddComponent {
   productPrice: number = 0;
 
   @Output('alisaProductAdd') addProductEvent = new EventEmitter<ProductElement>();
+  @ViewChild('productName') productname!: ElementRef;
 
-  addProduct(productname: HTMLInputElement) {
+  addProduct() {
     this.addProductEvent.emit({
-      name: productname,
+      name: this.productname.nativeElement.value,
       price: this.productPrice,
       description: this.productDescription
     });
