@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-interface ProductElement {
-  price: number;
-  name: string;
-  description: string;
-}
+import { ProductElement } from './interface/product-details';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
