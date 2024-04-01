@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-xs-12">
+        <p>Add Product</p>
+        <label>Product Name</label>
+        <input type="text" class="form-control" #inputRef>
+        <label>Product Price</label>
+        <input type="text" class="form-control" [(ngModel)]="productPrice">
+        <label>Product Description</label>
+        <textarea [(ngModel)]="productDescription" name="textareaName" id="textareaId" rows="4" cols="50"
+            class="form-control"></textarea>
+        <br>
+        <button class="btn btn-primary" (click)="onAddproduct(inputRef)">Add Product</button>
+    </div>
+</div>
