@@ -1,29 +1,9 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <p>Add Product</p>
-      <label>Product Name</label>
-      <input type="text" class="form-control" [(ngModel)]="productName">
-      <label>Product Price</label>
-      <input type="text" class="form-control" [(ngModel)]="productPrice">
-      <label>Product Description</label>
-      <textarea [(ngModel)]="productDescription" name="textareaName" id="textareaId" rows="4" cols="50" class="form-control"></textarea>
-      <br>
-      <button
-        class="btn btn-primary"
-        (click)="onAddproduct()">Add Product</button>
-    </div>
-  </div>
+  <app-add-product (productAddEvent)="onAddproduct($event)"></app-add-product>
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <div class="card" style="width: 18rem;margin-top:10px" *ngFor="let element of productElements">
-        <div class="card-body">
-          <h5 class="card-title">{{ element.name }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${{ element.price }}</h6>
-          <p class="card-text">{{ element.description }}</p>
-        </div>
-      </div>
+      <app-product-list  *ngFor="let element of productElements" [elementList]="element"></app-product-list>
     </div>
   </div>
 </div>
