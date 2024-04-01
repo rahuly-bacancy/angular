@@ -17,7 +17,7 @@ export class CreateProductComponent {
   productPrice: number = 0;
   @Output() productAdd = new EventEmitter<ProductElement>();
 
-  @ViewChild('productNameElement') productNameRef: ElementRef | null = null;
+  @ViewChild('productNameElement') productNameRef!: ElementRef;
 
   addProduct(productName:HTMLInputElement) {
     console.log(this.productNameRef);
